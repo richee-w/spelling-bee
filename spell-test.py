@@ -19,15 +19,15 @@ def generate_spelling_competition():
     sections = []
     # Generate 50 random words for each section of 6-18 letter words
     for i in range(6, 19):
-        section_words = [random.choice(word_list) for _ in range(50)]
+        section_words = [random.choice([word for word in word_list if len(word) == i]) for _ in range(50)]
         sections.append((i, section_words))
     # Generate 30 random words for each section of 19-20 letter words
     for i in range(19, 21):
-        section_words = [random.choice(word_list) for _ in range(30)]
+        section_words = [random.choice([word for word in word_list if len(word) == i]) for _ in range(30)]
         sections.append((i, section_words))
     # Generate 15 random words for each section of 21-22 letter words
     for i in range(21, 23):
-        section_words = [random.choice(word_list) for _ in range(15)]
+        section_words = [random.choice([word for word in word_list if len(word) == i]) for _ in range(15)]
         sections.append((i, section_words))
     # Write the spelling competition document to a file
     with open("spelling_competition.rtf", "w") as f:
@@ -41,6 +41,3 @@ def generate_spelling_competition():
             f.write("\\par\n")
         f.write("}")
     print("Spelling competition document generated successfully!")
-
-# Call the function to generate the spelling competition document
-generate_spelling_competition()
