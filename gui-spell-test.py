@@ -32,7 +32,8 @@ def generate_words():
         return
 
     words = random.sample(word_list, num_words)
-    word_display.configure(text="\n".join(words))
+    word_display.delete("1.0", tk.END)
+    word_display.insert(tk.END, " ".join(words))
 
 
 root = tk.Tk()
@@ -56,7 +57,7 @@ generate_button = tk.Button(root, text="Generate Words", command=generate_words)
 generate_button.pack()
 
 # Create a label to display the list of words
-word_display = tk.Label(root, text="")
+word_display = tk.Text(root, height=10, width=30, wrap="word")
 word_display.pack()
 
 root.mainloop()
