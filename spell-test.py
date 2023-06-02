@@ -41,3 +41,7 @@ def generate_spelling_competition():
             f.write("\\par\n")
         f.write("}")
     print("Spelling competition document generated successfully!")
+
+
+# Call the function to generate the spelling competition document
+generate_spelling_competition()
