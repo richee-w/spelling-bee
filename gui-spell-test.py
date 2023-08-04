@@ -3,9 +3,9 @@
 #
 # GNU General Public License, version 3
 
-###
+####
 # Spelling Contest: A program that generates a list of words based on the number of letters specified by the user.
-###
+####
 
 import tkinter as tk
 from tkinter import messagebox
